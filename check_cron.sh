@@ -26,36 +26,36 @@ else
   if [ -f "${WORKDIR}/start.sh" ] && [ -f "${FILE_PATH}/config.json" ] && [ -f "$HYSTERIA_CONFIG" ]; then
     echo "添加 nezha, socks5 和 Hysteria 的 crontab 重启任务"
     (crontab -l | grep -F "@reboot pkill -kill -u $USER && ${CRON_S5} && ${CRON_NEZHA} && ${CRON_HYSTERIA}") || (crontab -l; echo "@reboot pkill -kill -u $USER && ${CRON_S5} && ${CRON_NEZHA} && ${CRON_HYSTERIA}") | crontab -
-    (crontab -l | grep -F "pgrep -x \"nezha-agent\" > /dev/null || ${CRON_NEZHA}") || (crontab -l; echo "*/15 * * * * pgrep -x \"nezha-agent\" > /dev/null || ${CRON_NEZHA}") | crontab -
-    (crontab -l | grep -F "pgrep -x \"s5\" > /dev/null || ${CRON_S5}") || (crontab -l; echo "*/15 * * * * pgrep -x \"s5\" > /dev/null || ${CRON_S5}") | crontab -
-    (crontab -l | grep -F "pgrep -x \"web\" > /dev/null || ${CRON_HYSTERIA}") || (crontab -l; echo "*/15 * * * * pgrep -x \"web\" > /dev/null || ${CRON_HYSTERIA}") | crontab -
+    (crontab -l | grep -F "pgrep -x \"nezha-agent\" > /dev/null || ${CRON_NEZHA}") || (crontab -l; echo "*/35 * * * * pgrep -x \"nezha-agent\" > /dev/null || ${CRON_NEZHA}") | crontab -
+    (crontab -l | grep -F "pgrep -x \"s5\" > /dev/null || ${CRON_S5}") || (crontab -l; echo "*/35 * * * * pgrep -x \"s5\" > /dev/null || ${CRON_S5}") | crontab -
+    (crontab -l | grep -F "pgrep -x \"web\" > /dev/null || ${CRON_HYSTERIA}") || (crontab -l; echo "*/35 * * * * pgrep -x \"web\" > /dev/null || ${CRON_HYSTERIA}") | crontab -
   elif [ -f "${WORKDIR}/start.sh" ] && [ -f "$HYSTERIA_CONFIG" ]; then
     echo "添加 nezha 和 Hysteria 的 crontab 重启任务"
     (crontab -l | grep -F "@reboot pkill -kill -u $USER && ${CRON_NEZHA} && ${CRON_HYSTERIA}") || (crontab -l; echo "@reboot pkill -kill -u $USER && ${CRON_NEZHA} && ${CRON_HYSTERIA}") | crontab -
-    (crontab -l | grep -F "pgrep -x \"nezha-agent\" > /dev/null || ${CRON_NEZHA}") || (crontab -l; echo "*/15 * * * * pgrep -x \"nezha-agent\" > /dev/null || ${CRON_NEZHA}") | crontab -
-   (crontab -l | grep -F "pgrep -x \"web\" > /dev/null || ${CRON_HYSTERIA}") || (crontab -l; echo "*/15 * * * * pgrep -x \"web\" > /dev/null || ${CRON_HYSTERIA}") | crontab -
+    (crontab -l | grep -F "pgrep -x \"nezha-agent\" > /dev/null || ${CRON_NEZHA}") || (crontab -l; echo "*/35 * * * * pgrep -x \"nezha-agent\" > /dev/null || ${CRON_NEZHA}") | crontab -
+   (crontab -l | grep -F "pgrep -x \"web\" > /dev/null || ${CRON_HYSTERIA}") || (crontab -l; echo "*/35 * * * * pgrep -x \"web\" > /dev/null || ${CRON_HYSTERIA}") | crontab -
   elif [ -f "${FILE_PATH}/config.json" ] && [ -f "$HYSTERIA_CONFIG" ]; then
     echo "添加 socks5 和 Hysteria 的 crontab 重启任务"
     (crontab -l | grep -F "@reboot pkill -kill -u $USER && ${CRON_S5} && ${CRON_HYSTERIA}") || (crontab -l; echo "@reboot pkill -kill -u $USER && ${CRON_S5} && ${CRON_HYSTERIA}") | crontab -
-    (crontab -l | grep -F "pgrep -x \"s5\" > /dev/null || ${CRON_S5}") || (crontab -l; echo "*/15 * * * * pgrep -x \"s5\" > /dev/null || ${CRON_S5}") | crontab -
-    (crontab -l | grep -F "pgrep -x \"web\" > /dev/null || ${CRON_HYSTERIA}") || (crontab -l; echo "*/15 * * * * pgrep -x \"web\" > /dev/null || ${CRON_HYSTERIA}") | crontab -
+    (crontab -l | grep -F "pgrep -x \"s5\" > /dev/null || ${CRON_S5}") || (crontab -l; echo "*/35 * * * * pgrep -x \"s5\" > /dev/null || ${CRON_S5}") | crontab -
+    (crontab -l | grep -F "pgrep -x \"web\" > /dev/null || ${CRON_HYSTERIA}") || (crontab -l; echo "*/35 * * * * pgrep -x \"web\" > /dev/null || ${CRON_HYSTERIA}") | crontab -
   elif [ -f "${WORKDIR}/start.sh" ] && [ -f "${FILE_PATH}/config.json" ]; then
     echo "添加 nezha 和 socks5 的 crontab 重启任务"
     (crontab -l | grep -F "@reboot pkill -kill -u $USER && ${CRON_NEZHA} && ${CRON_S5}") || (crontab -l; echo "@reboot pkill -kill -u $USER && ${CRON_NEZHA} && ${CRON_S5}") | crontab -
-    (crontab -l | grep -F "pgrep -x \"nezha-agent\" > /dev/null || ${CRON_NEZHA}") || (crontab -l; echo "*/15 * * * * pgrep -x \"nezha-agent\" > /dev/null || ${CRON_NEZHA}") | crontab -
-    (crontab -l | grep -F "pgrep -x \"s5\" > /dev/null || ${CRON_S5}") || (crontab -l; echo "*/15 * * * * pgrep -x \"s5\" > /dev/null || ${CRON_S5}") | crontab -
+    (crontab -l | grep -F "pgrep -x \"nezha-agent\" > /dev/null || ${CRON_NEZHA}") || (crontab -l; echo "*/35 * * * * pgrep -x \"nezha-agent\" > /dev/null || ${CRON_NEZHA}") | crontab -
+    (crontab -l | grep -F "pgrep -x \"s5\" > /dev/null || ${CRON_S5}") || (crontab -l; echo "*/35 * * * * pgrep -x \"s5\" > /dev/null || ${CRON_S5}") | crontab -
   elif [ -f "${WORKDIR}/start.sh" ]; then
     echo "添加 nezha 的 crontab 重启任务"
     (crontab -l | grep -F "@reboot pkill -kill -u $USER && ${CRON_NEZHA}") || (crontab -l; echo "@reboot pkill -kill -u $USER && ${CRON_NEZHA}") | crontab -
-    (crontab -l | grep -F "pgrep -x \"nezha-agent\" > /dev/null || ${CRON_NEZHA}") || (crontab -l; echo "*/15 * * * * pgrep -x \"nezha-agent\" > /dev/null || ${CRON_NEZHA}") | crontab -
+    (crontab -l | grep -F "pgrep -x \"nezha-agent\" > /dev/null || ${CRON_NEZHA}") || (crontab -l; echo "*/35 * * * * pgrep -x \"nezha-agent\" > /dev/null || ${CRON_NEZHA}") | crontab -
   elif [ -f "${FILE_PATH}/config.json" ]; then
     echo "添加 socks5 的 crontab 重启任务"
     (crontab -l | grep -F "@reboot pkill -kill -u $USER && ${CRON_S5}") || (crontab -l; echo "@reboot pkill -kill -u $USER && ${CRON_S5}") | crontab -
-    (crontab -l | grep -F "pgrep -x \"s5\" > /dev/null || ${CRON_S5}") || (crontab -l; echo "*/15 * * * * pgrep -x \"s5\" > /dev/null || ${CRON_S5}") | crontab -
+    (crontab -l | grep -F "pgrep -x \"s5\" > /dev/null || ${CRON_S5}") || (crontab -l; echo "*/35 * * * * pgrep -x \"s5\" > /dev/null || ${CRON_S5}") | crontab -
   elif [ -f "$HYSTERIA_CONFIG" ]; then
     echo "添加 Hysteria 的 crontab 重启任务"
     (crontab -l | grep -F "@reboot pkill -kill -u $USER && ${CRON_HYSTERIA}") || (crontab -l; echo "@reboot pkill -kill -u $USER && ${CRON_HYSTERIA}") | crontab -
-    (crontab -l | grep -F "pgrep -x \"web\" > /dev/null || ${CRON_HYSTERIA}") || (crontab -l; echo "*/15 * * * * pgrep -x \"web\" > /dev/null || ${CRON_HYSTERIA}") | crontab -
+    (crontab -l | grep -F "pgrep -x \"web\" > /dev/null || ${CRON_HYSTERIA}") || (crontab -l; echo "*/35 * * * * pgrep -x \"web\" > /dev/null || ${CRON_HYSTERIA}") | crontab -
   fi
 fi
 
