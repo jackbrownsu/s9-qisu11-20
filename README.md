@@ -1,4 +1,4 @@
-# socks5-hysteria2-for-serv00-ct8
+# socks5-hysteria2-for-serv00
 - 给 serv00 & ct8 机器一键安装 socks5 & hysteria2 & nezha-agent
 - CT8目前不推荐安装哪吒探针，安装探针容易封号。
 - serv00 & CT8 请勿安装PM2，安装PM2容易封号。
